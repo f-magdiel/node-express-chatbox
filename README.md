@@ -1,68 +1,60 @@
 # Chat App
-Building a real-time chat application using Nodejs, Express.js and socket.io
 
-- Users can enter the chat.
-- Upon entering chat users are given a randomly generated name.
-- Users can change their name.
-- Users can send and receive messages in real-time from other users.
-- Chats are not currently being persisted to a database or log file.
+Aplicación de chat en tiempo real construida con Node.js, Express y Socket.IO.
 
-# Screenshots
+## Funcionalidades
+- Generación de nombre de usuario aleatorio al ingresar.
+- Envío/recepción de mensajes en tiempo real.
+- Cambio de nombre de usuario en cualquier momento.
 
-![](https://github.com/danielc92/node-express-chatbox/blob/master/screenshots/Screen%20Shot%202019-07-11%20at%2011.29.03%20am.jpg)
+## Runtime
+- Versión mayor de Node.js requerida: `20` (ver `.nvmrc`).
 
-![](https://github.com/danielc92/node-express-chatbox/blob/master/screenshots/Screen%20Shot%202019-07-11%20at%2011.29.30%20am.jpg)
+## Inicio Rápido (Golden Path)
 
-![](https://github.com/danielc92/node-express-chatbox/blob/master/screenshots/Screen%20Shot%202019-07-11%20at%2011.29.35%20am.jpg)
+### Opción A: Local (npm)
+1. Instala Node 20.
+2. Ejecuta la configuración inicial:
+   - macOS/Linux: `./setup.sh`
+   - Windows (Git Bash): `./setup.sh`
+   - Windows (PowerShell, equivalente manual):
+     - `npm ci`
+     - `if (!(Test-Path .env)) { Copy-Item .env.example .env }`
+     - `npm run migrate --if-present`
+     - `npm run seed --if-present`
+   - Alternativa: `make setup` (si `make` está instalado)
+3. Inicia el servidor de desarrollo: `npm run dev`
+4. Abre: [http://localhost:3001](http://localhost:3001)
 
-![](https://github.com/danielc92/node-express-chatbox/blob/master/screenshots/Screen%20Shot%202019-07-11%20at%2011.30.17%20am.jpg)
+### Opción B: Docker
+1. Ejecuta: `docker compose up --build`
+2. Abre: [http://localhost:3001](http://localhost:3001)
 
+## Comandos Comunes
+- `npm run dev`: inicia con recarga en caliente (`node --watch`).
+- `npm start`: inicia el servidor.
+- `npm test`: ejecuta prueba de humo contra `/health`.
+- `make setup`: instala dependencias + bootstrap de entorno + migraciones + seed.
 
+## Cómo Usar la App
+1. Abre la app en dos ventanas/pestañas distintas del navegador para probar el chat en tiempo real.
+2. Escribe un mensaje y haz clic en el botón con el ícono de avión de papel.
+3. Para cambiar tu nombre de usuario, escribe en **Change name...** y haz clic en el botón con ícono de usuario.
+4. Usa el panel derecho para confirmar tu nombre actual y el ID de sesión.
 
-# Before you get started
-Refresh on the following things;
-- HTML5/CSS
-- socket.io
-- Express.js web framework
-- Javascript (ES6)
-- Node
+## Notas para Windows
+- No uses `npm install nodemon -g`; este proyecto no requiere `nodemon`.
+- Si `make` no está disponible, usa los comandos manuales de PowerShell de la sección de Inicio Rápido.
+- Si la configuración local se bloquea por problemas de entorno, usa Docker (`docker compose up --build`).
 
-# Setup
+## Estructura del Proyecto
+- `server.js`: servidor Express + Socket.IO.
+- `public/`: frontend estático.
+- `scripts/smoke-test.js`: prueba de humo automatizada.
+- `setup.sh`: script de bootstrap de configuración.
+- `Makefile`: flujo de configuración con `make`.
+- `docker-compose.yml` / `Dockerfile`: ruta de ejecución en contenedores.
 
-**Installing Depencendies**
-
-Dependencies and versions are listed in the package.json "dependencies" key, and can be installed via the following command from root:
-
-```sh
-npm install
-```
-
-**Installation of nodemon**
-
-This project uses nodemon for hot reloading
-I installed it globally using:
-
-```sh
-npm install nodemon -g
-```
-
-**Installation of Node**
-
-This project requires `nodejs` to run.
-
-**Starting the dev server**
-
-`nodemon` will auto reload the server upon file changes.
-
-```sh
-nodemon server.js
-```
-
-# Tests
-- Tested bidirectional messaging successfully
-
-# Contributors
-- Daniel Corcoran
-
-# Sources
-- [Express Documentation](https://expressjs.com/)
+## Fuentes
+- [Documentación de Express](https://expressjs.com/)
+- [Documentación de Socket.IO](https://socket.io/docs/v2/)
