@@ -21,5 +21,5 @@
 
 [IMPLICIT_DEP] Las dependencias del package.json están desactualizadas. El repositorio tiene 7 años y librerías como Express o socket.io pueden tener cambios importantes que afecten el funcionamiento o la seguridad.
 
-Total de friction points: 10
+Total de friction points: 10 .
 Tiempo hasta bloqueo: ~25 minutos (new hire sin experiencia en Node, usando Windows)
