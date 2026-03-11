@@ -11,5 +11,7 @@
 - No sabe cómo cambiar el nombre de usuario (la opción no es obvia).
 - El README no explica que necesita dos ventanas/navegadores para probar el chat en tiempo real ni cómo usar las funciones básicas.
 
-Total de friction points: 5
+[MISSING_DOC] README pensado para Unix, pero nosotros usamos Windows. Faltan instrucciones para Windows (permisos, PATH, rutas), lo que causó más problemas
+
+Total de friction points: 6
 Tiempo hasta bloqueo: ~25 minutos (new hire sin experiencia en Node)
