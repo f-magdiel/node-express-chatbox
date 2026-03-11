@@ -36,3 +36,11 @@ Ejemplo usando el bloqueo observado en el pain log (`~25 min = 0.42 h`):
 Si `$Y = $60/h`, entonces:
 
 `Costo mensual ≈ $126 USD/mes`
+
+## What We Would Do Next
+La mejora de mayor ROI que no alcanzamos a implementar es la persistencia de los chats en una base de datos, ya que actualmente los mensajes desaparecen al cerrar la ventana y los usuarios no pueden retomar conversaciones anteriores. Implementar almacenamiento (con MongoDB, PostgreSQL o SQLite) permitiría recuperar el historial al volver a conectarse, habilitaría búsqueda de mensajes antiguos y sentaría las bases para funcionalidades como autenticación de usuarios o salas persistentes, transformando la app de una demo técnica a un producto realmente útil para usuarios finales.
+
+## The Demo
+
+[Demo](https://drive.google.com/file/d/1fTAY3pdsuKhfYVL_t3N9104dOhWmOZU6/view?usp=sharing
+)
